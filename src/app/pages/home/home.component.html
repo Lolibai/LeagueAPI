@@ -1,0 +1,18 @@
+<div class="card_container">
+  <mat-card class="main_card">
+    <form class="summoner_form">
+      <mat-form-field class="summoner_input">
+        <input matInput placeholder="Summoner" [(ngModel)]="summoner" [ngModelOptions]="{standalone: true}" value="">
+      </mat-form-field>
+      <mat-form-field class="summoner_server">
+        <mat-select placeholder="Server" [(ngModel)]="server" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let server of servers" [value]="server.value">
+            {{ server.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <button [disabled]='isEmpty()' (click)="getInfo()" mat-raised-button color="primary">Get Info</button>
+  </mat-card>
+  <app-result class="result"></app-result>
+</div>

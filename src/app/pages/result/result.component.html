@@ -1,0 +1,5 @@
+<mat-card class="result_card">
+  <mat-card class="result_detail" *ngFor="let match of apiService.matches">
+    <img src="https://ddragon.leagueoflegends.com/cdn/7.10.1/img/champion/{{getImage(match.champion)}}.png">
+  </mat-card>
+</mat-card>
